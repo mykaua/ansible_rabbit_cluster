@@ -1,0 +1,10 @@
+---
+- name: add user
+  shell: rabbitmqctl add_user {{user_name}} {{password}}
+
+- name: set user tags
+  shell:  rabbitmqctl set_user_tags {{user_name}} {{
+    user_tag}}
+
+- name: set permissions for user
+  shell:  rabbitmqctl set_permissions -p / {{user_name}} {{user_permissions}}

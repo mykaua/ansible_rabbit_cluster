@@ -1,0 +1,5 @@
+[node]
+node02 ansible_host=192.168.15.116 ansible_user=vagrant ansible_ssh_private_key_file=.vagrant/machines/node02/virtualbox/private_key
+
+[manage]
+linux ansible_host=192.168.15.115 ansible_user=vagrant ansible_ssh_private_key_file=.vagrant/machines/linux/virtualbox/private_key

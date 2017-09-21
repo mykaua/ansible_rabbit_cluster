@@ -1,0 +1,11 @@
+---
+# Centos and rabbitMQ vars
+Centos_packages:
+  - wget
+  - vim
+  - erlang
+  - socat
+
+rabbit_rpm: https://github.com/rabbitmq/rabbitmq-server/releases/download/rabbitmq_v3_6_12/rabbitmq-server-3.6.12-1.el7.noarch.rpm
+
+rabbit_service: rabbitmq-server

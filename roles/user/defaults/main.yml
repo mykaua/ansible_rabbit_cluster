@@ -1,0 +1,6 @@
+---
+# user defaults
+user_name: 'mqadmin'
+password: 'mqadmin'
+user_tag: 'administrator'
+user_permissions: '".*" ".*" ".*"'

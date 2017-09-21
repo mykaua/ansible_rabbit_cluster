@@ -1,0 +1,23 @@
+---
+- name: copy host file
+  template:
+    src=hosts.j2
+    dest=/etc/hosts
+  tags: host
+
+
+- name: status rabbitmq
+  shell: rabbitmqctl status
+  register: status
+
+- debug: var=status
+
+- name: copy cookie
+  template:
+    src: cookie.j2
+    dest: /var/lib/rabbitmq/.erlang.cookie
+    owner: rabbitmq
+    group: rabbitmq
+    mode: 0400
+  tags: test
+  notify: Restart rabbitMQ

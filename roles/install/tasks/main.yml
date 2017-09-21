@@ -1,0 +1,14 @@
+---
+# Install rabbitMQ on CentOS
+- name: Add epel repo
+  yum: name=epel-release state=installed
+
+- name: Install Centos packages
+  yum: name={{ item }} state=installed
+  with_items: "{{ Centos_packages }}"
+
+- name: Install rabbitmq
+  yum: name={{rabbit_rpm}} state=present
+
+- name: Ensure rabbit is started and enabled
+  service: name={{ rabbit_service }} state=started enabled=yes

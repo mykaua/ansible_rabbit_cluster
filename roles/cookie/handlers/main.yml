@@ -1,0 +1,4 @@
+---
+# rabbitMQ handlers
+- name: Restart rabbitMQ
+  service: name={{ rabbit_service }} state=restarted

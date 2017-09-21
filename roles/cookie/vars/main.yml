@@ -1,0 +1,2 @@
+rabbit_service: rabbitmq-server
+rabbit_cookie: /var/lib/rabbitmq

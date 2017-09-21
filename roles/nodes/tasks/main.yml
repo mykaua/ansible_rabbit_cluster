@@ -1,0 +1,15 @@
+---
+- name: stop rabbitmq
+  shell: rabbitmqctl stop_app
+
+- name: add node to cluster
+  shell: rabbitmqctl join_cluster rabbit@linux
+
+- name: start cluster node
+  shell: rabbitmqctl start_app
+
+- name: status
+  shell: rabbitmqctl cluster_status
+  register: stat
+
+- debug: var=stat

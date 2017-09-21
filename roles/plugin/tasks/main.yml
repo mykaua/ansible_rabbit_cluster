@@ -1,0 +1,4 @@
+---
+  # Enable RabbitMQ Management Plugin
+- name: enable Plugin
+  shell:  rabbitmq-plugins enable rabbitmq_management

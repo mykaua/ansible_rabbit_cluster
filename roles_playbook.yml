@@ -1,0 +1,20 @@
+---
+- name: Install RabbitMQ cluster
+  hosts: all
+  roles:
+    - install
+    - cookie
+- name: creating cluster
+  hosts: node
+  roles:
+    - nodes
+
+- name: Enable Management Plugin
+  hosts: all
+  roles:
+    - plugin
+
+- name: Add user
+  hosts: manage
+  roles:
+    - { role: 'user', user_name: monitor, password: monitor, user_tag: monitoring, tags: 'user_check'}
